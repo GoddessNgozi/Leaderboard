@@ -4,7 +4,7 @@ const postScore = async (e) => {
   const score = document.querySelector('#score').value;
   const data = {
     user: name.trim(),
-    score: score,
+    score,
   };
   const post = {
     method: 'POST',
@@ -15,6 +15,6 @@ const postScore = async (e) => {
   };
   await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/24c0c3c116974ac49488d4eb0267bbc3/scores/', post);
   document.querySelector('form').reset();
-  };
+};
 
-  export default postScore;
+export default postScore;
