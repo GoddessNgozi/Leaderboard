@@ -16,7 +16,17 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_postscore_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/postscore.js */ \"./src/modules/postscore.js\");\n\n\ndocument.querySelector('form').addEventListener('submit', _modules_postscore_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_postscore_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/postscore.js */ \"./src/modules/postscore.js\");\n/* harmony import */ var _modules_getscores_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/getscores.js */ \"./src/modules/getscores.js\");\n\n\n\ndocument.querySelector('form').addEventListener('submit', _modules_postscore_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\ndocument.getElementById('refresh').addEventListener('click', _modules_getscores_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n//# sourceURL=webpack://leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/getscores.js":
+/*!**********************************!*\
+  !*** ./src/modules/getscores.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getScores = async () => {\n  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/a3bnNfVu6IZEqV9J1Num/scores/');\n  const data = await response.json();\n  const { result } = data;\n  const board = document.getElementById('board');\n  board.innerHTML = '';\n  result.forEach((item) => {\n    board.innerHTML += `\n        <tr><td>${item.user}: ${item.score}</td></tr>\n        `;\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getScores);\n\n//# sourceURL=webpack://leaderboard/./src/modules/getscores.js?");
 
 /***/ }),
 
