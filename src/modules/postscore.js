@@ -1,9 +1,9 @@
 const postScore = async (e) => {
   e.preventDefault();
-  const name = document.querySelector('#name').value;
+  const user = document.querySelector('#name').value;
   const score = document.querySelector('#score').value;
   const data = {
-    user: name.trim(),
+    user,
     score,
   };
   const post = {
