@@ -24,7 +24,7 @@ This app gets scores of users from an external API and displays it on the browse
 
 ### LIVE DEMO
 
-Check the live demo here [LINK](https://goddessngozi.github.io/Leaderboard/)
+Click [Link](https://goddessngozi.github.io/Leaderboard/dist)
 
 ## Author
 
